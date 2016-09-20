@@ -1,0 +1,34 @@
+<%-- any content can be specified here e.g.: --%>
+
+<%@page import="domain.Customer"%>
+<%@page import="domain.Order"%>
+<%@ page pageEncoding="UTF-8" %>
+<% Customer customer = (Customer)session.getAttribute("theCustomer");
+                 Order order = (Order)session.getAttribute("theOrder");
+                 if (customer != null){
+                     %>
+                     <p> Welcome <%out.println(customer.getName());
+                     }%></p>
+                         
+                  
+
+<nav>
+    <ul>             
+                <li><a href="home.jsp">Home</a></li>
+                <li><a href="productDetails.jsp">Browse</a></li>
+                <li><a href="buyProduct.jsp">View Cart</a></li>
+                <% if (customer == null){%>              
+                <li><a href="logIn.jsp">Log In</a></li>
+                <%}else{%>
+             
+                <li><a href="logOut.jsp">Log Out</a></li>        
+                <%
+                if (order == null){
+                session.setAttribute("theOrder", order);
+                }
+                }%>
+            </ul>
+        </nav>
+               <h> WELCOME TO THIS ONLINE SHOP</H>
+            
+            
