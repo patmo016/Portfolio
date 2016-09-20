@@ -1,0 +1,83 @@
+body {
+    font-family: Georgia, serif;
+    background-color: white;
+    color: black;
+}
+header {
+    height: 400px;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0px 50px 0px;
+    background-color: black;
+    color: whitesmoke;
+    overflow: hidden;
+    background-image: url('scene.jpg');
+    background-repeat: no-repeat;
+}
+h1 {
+    font-size: 68pt;
+    font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.3999996185303px;
+}
+nav ul {
+    list-style: none;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    display: inline-block;
+    background-color: black;
+    color: gray;
+    font-size: 18pt;
+    padding: 5px 20px 5px 20px;
+    margin: 10px;
+}
+nav {
+    background-color: black;
+}
+#main {
+    margin: 0px 100px 0px 100px;
+    clear: left;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 16pt;
+    padding: 20px;
+}
+nav a:link,
+nav a:visited {
+    width: 120px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a:hover,
+a:active {
+    color: #756C87;
+}
+footer {
+    text-align: center;
+    padding: 1px;
+    margin: 0px;
+    background-color: black;
+    color: whitesmoke;
+}
+table {
+    width: 100%;
+    text-align: center;
+}
+#blurb {
+    text-align: center;
+    padding-bottom: 75px;
+}
+#rooms {}
+#describe {
+    padding-left: 75px;
+}

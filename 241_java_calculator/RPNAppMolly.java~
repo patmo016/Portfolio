@@ -1,0 +1,200 @@
+package week09;
+
+import java.io.*;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Stack;
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+import java.lang.ArithmeticException;
+
+public class RPNApp{
+  
+    public static final String[] OPERATORS ={ "+", "-", "*", "/", "%"};
+    public static final String[] R_OPERATORS={ "+!", "*!", "-!", "/!", "%!"};
+    public static final String[] S_OPERATORS={ "d", "c", "r"};
+    public static Stack<Long> stack;
+  
+  
+  
+    public static void main (String [] args){ 
+        Scanner scan = new Scanner(System.in);;
+    
+        String[] tokens = new String[10];
+        int count = 0;
+    
+        while(scan.hasNext()){
+            String input  = scan.nextLine();
+            System.out.println (evaluate(input.split(" ")));
+        }
+    
+    }
+  
+    public static ArrayList<Long> evaluate (String [] tokens){
+        stack = new Stack<Long>();
+        // initializes new array list
+    
+        ArrayList<Long> result = new ArrayList<Long>();
+        String resultBuilt = "";
+        for (String token: tokens){
+            if (isRepeatOperator(token)){
+                try{
+                    while (stack.size()>1){
+                        Long r= operation(stack.pop(), stack.pop(), token);
+                        stack.push(r);
+                    }
+                }
+                catch (EmptyStackException e){
+                        System.out.println("Error: too few operands");
+                }
+            }else if(isSpecialOperator(token)){
+                stack = (specialOperation(stack, token));
+            }else if(token.equals("o")){
+                    System.out.print(stack.peek()+ " ");
+                
+            }else if (isOperator(token)){
+                try{
+                    stack.push(operation(stack.pop(), stack.pop(), token));
+                }
+                catch (EmptyStackException e){
+                    System.out.println("Error: too few operands");
+                }
+                
+
+            }else if(isParentheses(token)){
+                if (token.equals(")")){
+                        System.out.println("ignore");
+                    }
+                    Long x= stack.pop();
+                    String r = "";
+                    int i =0;
+                    for (String t: tokens){
+                        r+=t;
+                    }
+                    System.out.print(r);
+                        
+            }else{
+                try{
+                    stack.push(Long.parseLong(token));
+                }
+                catch (NumberFormatException e){
+                    System.out.println("Error: bad token "+"'"+ token+"'");
+                }
+            }
+      
+        }
+        /**adds top of the stack to the start of the array list (index 0), returns list*/
+        while(!stack.isEmpty()){
+            result.add(0, stack.pop());
+        }
+        return result;
+    }
+
+    // public static Stack<Link> parentheses(Stack<Long> stack, String[] tokens){
+        
+
+    public static boolean isSpecialOperator(String token){
+        for(String op: S_OPERATORS)
+            if(op.equals(token)){
+                return true;
+            }
+        return false;
+    }
+
+    public static boolean isRepeatOperator(String token){
+        for(String op: R_OPERATORS){
+            if(op.equals(token)){
+                return true;
+            }
+        }
+        return false;
+    }
+        
+  
+    public static boolean isOperator(String token){
+        for(String op: OPERATORS){
+            if(op.equals(token)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isParentheses(String token){
+        if (token.equals("(")||token.equals(")")){
+            return true;
+            }
+            return false;
+            }
+
+        
+
+    public static Stack<Long> specialOperation(Stack<Long> stack, String token){
+        if(token.equals("d")){
+            stack.push(stack.peek());
+            return stack;
+        }else if(token.equals("c")){
+            try{
+                Long y= stack.pop();
+                Long x= stack.pop();
+                while (y>0){
+                    stack.push(x);
+                    y--;
+                }
+            }
+            catch (EmptyStackException e){
+                System.out.println("Error: too few operands");
+            }
+            return stack;
+        }else if(token.equals("r")){
+            Stack <Long> temp = new Stack<Long>();
+            Long k = stack.pop();
+            Long x = stack.pop();
+            while (k-1>0){
+                temp.push(stack.pop());
+                k--;
+            }
+            temp.push(x);
+            
+            while(!temp.isEmpty()){
+                stack.push(temp.pop());
+            }
+            return stack;
+        }
+            
+        
+        return null;
+    }
+
+  
+    public static Long operation(Long y, Long x, String op){
+        if (op.equals ("+")||op.equals("+!")){
+            return x+y;
+        }
+        else if (op.equals ("/")||op.equals("/!")){
+            try{
+                return x/y;
+            }
+            catch (ArithmeticException e){
+                System.out.println("Error: division by 0");
+            
+            }
+        }
+        else if (op.equals ("*")||op.equals("*!")){
+            return x*y;
+        } else if (op.equals ("-")|| op.equals("-!")){
+            return x-y;
+        }
+        else if (op.equals("%")|| op.equals("%!")){
+            return x%y;
+        }
+        return null;
+    }
+        
+}
+
+  
+
+    
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<head>
+    <title>Booking</title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="showRooms.js"></script>
+    <script src="makeBooking.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h1> Hilberts Grand Hotel</h1>
+
+    </header>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li id="showRooms">Our Rooms</li>
+            <li>Booking
+            </li>
+        </ul>
+    </nav>
+    <div id="main">
+        <form id="roombooking">;
+            <fieldset>
+                <p>
+                    <lable for=ArrivalDate> Arrival Date</lable>
+                    <input type="date" name="checkIn">
+                </p>
+                <p>
+                    <lable for=Checkoutdate>Checkout Date</lable>
+                    <input type="date" name="checkout">
+                </p>
+                <button type="button" id="roomsbutton"> Rooms Available </button>
+            </fieldset>
+        </form>
+
+    </div>
+
+
+
+</body>

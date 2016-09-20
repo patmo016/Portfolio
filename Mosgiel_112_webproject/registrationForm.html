@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<!--Molly Patterson 2015 -->
+<!--mopatterson-->
+<!--registrationForm.html-->
+	<head>
+		<title>Registration</title>
+		<meta charset=utf-8>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1>Mosgiel Underwater Hockey Club</h1>
+		<div class="register">
+			<h2>Registration Form</h2>
+			<p>Please complete the form below to register your interest in Underwater Hockey</p>
+			<form method="get" enctype="application/x-www-form-urlencoded" action="http://web112.otago.ac.nz/112bin/112formslab.cgi">
+				<div>
+					<input type="hidden" name="recipient" value="patmo016@student.otago.ac.nz">
+					<input type="hidden" name="subject" value="Registration">
+					<input type="hidden" name="followup-page" value="http://csnet.otago.ac.nz/mopatterson/project/Submit.html">
+				</div>
+				<fieldset class="textInputs">
+					<legend>Register Details</legend>
+					<ul>
+						<li>
+							<label for="firstname">First name:</label>
+							<input type="text" id="firstname" name="Firstname" required pattern="[A-Z a-z-']+" placeholder="Please enter your first name" size="26">
+						</li>
+						<li>
+							<label for="surname">Surname:</label>
+							<input type="text" id="surname" name="Surename" required pattern="[A-Z a-z-']+" placeholder= "Please enter your surname" size="26">
+						</li>
+						<li>
+						<label for="number">Age:</label>
+						<input type="number" id="number" name="Age" placeholder= "Please enter your Age" size="22" min="1" max="99">
+						<li>
+							<label for="sender">EmailAddress:</label>
+							<input type="email" id="sender" name="sender" placeholder="Please enter your email address" size="26">
+						</li>
+						<li>
+							<label for="phone">Phonenumber:</label>
+							<input type="tel" id="phone" name="Phone" required pattern= "[0-9 -()]+" placeholder="Please enter a Phone number" size="26">
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset class="gender">
+					<legend>What gender do you associate yourself as?</legend>
+					<ul >
+						<li>
+							<label><input type="radio" name="gender" id="emailcontact" value="female" required>Female</label>
+						</li>
+						<li>
+							<label><input type="radio" name="gender" value="phone" id="phonecontact" required>Male</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset class="button">
+					<legend>How did you learn about Mosgiel Underwater Hockey Club?</legend>
+					<ul>
+						<li>
+							<label><input type="checkbox" name="Source" id="family" value="Family">Family </label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="Source" id="friends" value="Friends">Friends </label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="Source" id="online" value="Online">Online </label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="Source" id="adverts" value="Aderts">Advertisements</label>
+						</li>
+						<li>
+							<label><input type="checkbox" name="Source" id="other" value="Other">Other </label>
+						</li>
+					</ul>
+				</fieldset>
+				<div>
+					<fieldset class= "comments">
+						<legend>Additional Comments</legend>
+						<label>
+							<textarea cols="40" rows="4" id="comments" name="Additional comments" placeholder="Add any queries you may have here"></textarea>
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>Submission</legend>
+						<label class="buttons">
+							<input type="reset" name="reset">
+						</label>
+						<label class="buttons">
+							<input type="submit" value="submit">
+						</label>
+					</fieldset>
+				</div>
+			</form>
+			<p> Return to <a href="index.html">Home</a></p>
+		</div>
+		<p class="footer">This website was created for a University project. The content is largely fictional and no services are actually being offered.
+		</p>
+	</body>
+</html>

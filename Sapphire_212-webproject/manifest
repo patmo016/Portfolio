@@ -1,0 +1,5 @@
+*.html
+style.css
+images/*.jpg
+*.js
+*.xml

@@ -1,0 +1,21 @@
+Molly Patterson
+505253
+COMP212 Assignment 1.
+
+Third Party Libraries:
+I used one third party library to implement the jquery datepicker() sourced from https://jqueryui.com/datepicker/ with the files downloaded into the folder “datepicker”.
+This was relevant for easy access of dates in the form on the booking.html page.
+
+JSLint options:
+When testing validation in JSLint I assumed it was in a browser and tolerated the for statement and this. I decided that these options would not affect my code validation. The for statement was more natural for me to iterate through arrays and “this” was only used on small parts in the code. I also imported Jquery and console as global variables.
+
+Testing:
+In testing my code I started with a basic format of the Hotel website with minimum HTML and CSS. From there I used the ajax to access the XML files and developed it to design the specifications. I used console.log to track what my variables were and if they were accessing the right elements. For example when testing the bookings i needed to know what type the check in dates were recorded as and if i was putting them into an array of “booked” objects. I used console.log to record this and know what i could access. I used different browsers and found that my website was able to work in Chrome, Firefox and Safari. For the datepicker, i knew chrome automatically used one in the form with the input attribute “date” but this wasnt able to be used in other browsers making it necessary for an alternative.
+Because I begun with basic code and built up i had to continue adding code for unanticipated errors. Because of this my javascript files became unorganized and harder to manage the functions within each module. 
+
+Cookies:
+I used the cookie.js code used in labs to set my cookies. The cookies held the user name, check in and checkout dates, and the room details. I set the cookie to 48 hours so it would be available to use for 2 days after submission. I thought this was more than enough time for removal of bookings or confirmation from the admin side.
+
+In submitting my assignment I am aware of the major issue of validation in the booking form. I attempted to make the rooms not able to be seen if there were no dates but was unable to make the code work. The show available rooms button crashes a lot with undefined appearing instead of an error message or the inserted html fieldset.
+
+Beyond the basic requirements the only extra code i added was the clear button in the pending bookings, making it available for the user to remove their pending bookings if mistakes were made. In the future i could adjust this for individual bookings and have it removed once the booking is confirmed. 
