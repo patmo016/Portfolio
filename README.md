@@ -1,5 +1,5 @@
 # Portfolio
-This is designed to show a collection of projects. 
+This portfolio is designed to show a collection of projects. 
 Below is a short description of each.
 
 Java_calculator: completed for COSC241. takes in two numbers and an operator and uses a stack to calculate
@@ -12,3 +12,5 @@ Saphire: Shows the website completed for the project in COMP212: A website for a
 and takes in bookings.
 
 Mosgiel_hockey_club: Shows the website completed for the project in COMP112: A website using HTML and CSS
+
+Info221: current project that uses Java for GUI and web applications. Work in progress.
